@@ -80,7 +80,7 @@ const projects = [
 
 export default function WebDevPage() {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background" data-cursor="web">
             {/* Hero Section */}
             <section className="container-custom py-20 md:py-32">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">

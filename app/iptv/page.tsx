@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function IPTVPage() {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background" data-cursor="iptv">
             {/* Hero Section */}
             <section className="container-custom py-20 md:py-32">
                 <div className="max-w-4xl mx-auto text-center space-y-6">

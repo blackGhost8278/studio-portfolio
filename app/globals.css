@@ -13,23 +13,26 @@
   --foreground: #ededed;
   --foreground-muted: #a0a0a0;
   --foreground-subtle: #666666;
-  
+
   /* Brand Colors - Distinct for each service */
-  --brand-web: #3b82f6; /* Blue for Web Dev */
-  --brand-iptv: #ec4899; /* Pink for IPTV */
-  --brand-3d: #8b5cf6; /* Purple for 3D */
-  
+  --brand-web: #3b82f6;
+  /* Blue for Web Dev */
+  --brand-iptv: #ec4899;
+  /* Pink for IPTV */
+  --brand-3d: #8b5cf6;
+  /* Purple for 3D */
+
   /* Accent Colors */
   --accent-primary: #6366f1;
   --accent-secondary: #06b6d4;
   --accent-success: #10b981;
   --accent-warning: #f59e0b;
   --accent-error: #ef4444;
-  
+
   /* Border & Divider */
   --border-color: rgba(255, 255, 255, 0.1);
   --border-color-hover: rgba(255, 255, 255, 0.2);
-  
+
   /* Glassmorphism */
   --glass-bg: rgba(17, 17, 17, 0.7);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -44,25 +47,25 @@
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-foreground-subtle: var(--foreground-subtle);
-  
+
   --color-brand-web: var(--brand-web);
   --color-brand-iptv: var(--brand-iptv);
   --color-brand-3d: var(--brand-3d);
-  
+
   --color-accent-primary: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
-  
+
   --color-border: var(--border-color);
-  
+
   /* Typography */
   --font-sans: var(--font-inter);
   --font-display: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  
+
   /* Spacing & Sizing */
   --nav-height: 4rem;
   --container-max: 1400px;
-  
+
   /* Animation Durations */
   --duration-fast: 150ms;
   --duration-normal: 300ms;
@@ -88,6 +91,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }
 
 /* ============================================
@@ -166,6 +175,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -173,18 +183,24 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
