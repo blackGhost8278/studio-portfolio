@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code2, Tv, Box } from "lucide-react";
+import Link from "next/link";
 import { fadeInUp, staggerContainer } from "@/lib/utils";
 
 export default function HomePage() {
@@ -17,11 +18,11 @@ export default function HomePage() {
         >
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl md:text-7xl font-bold gradient-text"
+            className="text-5xl md:text-7xl font-bold"
           >
-            Multi-Disciplinary
+            High-Performance
             <br />
-            Creative Studio
+            <span className="gradient-text">Digital Solutions</span>
           </motion.h1>
 
           <motion.p
@@ -50,60 +51,54 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Three-Pillar Section - Placeholder */}
+      {/* Services Grid */}
       <section className="container-custom py-20">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="grid md:grid-cols-3 gap-8"
-        >
-          {/* Web Development */}
-          <div className="glass p-8 rounded-2xl hover:glow-web transition-smooth group cursor-pointer">
-            <div className="w-12 h-12 rounded-lg gradient-web flex items-center justify-center mb-4">
-              <Code2 className="w-6 h-6 text-white" />
+        <div className="grid md:grid-cols-3 gap-8">
+          <Link href="/web-dev" className="block">
+            <div className="glass p-8 rounded-2xl hover:glow-web transition-smooth group cursor-pointer h-full">
+              <div className="w-12 h-12 rounded-lg gradient-web flex items-center justify-center mb-4">
+                <Code2 className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Web Development</h3>
+              <p className="text-foreground-muted">
+                High-performance web applications built with cutting-edge technology.
+              </p>
             </div>
-            <h3 className="text-2xl font-bold mb-2">Web Development</h3>
-            <p className="text-foreground-muted">
-              High-performance web applications built with cutting-edge technology.
-            </p>
-          </div>
+          </Link>
 
-          {/* IPTV Rebranding */}
-          <div className="glass p-8 rounded-2xl hover:glow-iptv transition-smooth group cursor-pointer">
-            <div className="w-12 h-12 rounded-lg gradient-iptv flex items-center justify-center mb-4">
-              <Tv className="w-6 h-6 text-white" />
+          <Link href="/iptv" className="block">
+            <div className="glass p-8 rounded-2xl hover:glow-iptv transition-smooth group cursor-pointer h-full">
+              <div className="w-12 h-12 rounded-lg gradient-iptv flex items-center justify-center mb-4">
+                <Tv className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">IPTV Rebranding</h3>
+              <p className="text-foreground-muted">
+                Transform your IPTV platform with stunning UI/UX design.
+              </p>
             </div>
-            <h3 className="text-2xl font-bold mb-2">IPTV Rebranding</h3>
-            <p className="text-foreground-muted">
-              Transform your IPTV platform with stunning UI/UX design.
-            </p>
-          </div>
+          </Link>
 
-          {/* 3D Animation */}
-          <div className="glass p-8 rounded-2xl hover:glow-3d transition-smooth group cursor-pointer">
-            <div className="w-12 h-12 rounded-lg gradient-3d flex items-center justify-center mb-4">
-              <Box className="w-6 h-6 text-white" />
+          <Link href="/3d-visuals" className="block">
+            <div className="glass p-8 rounded-2xl hover:glow-3d transition-smooth group cursor-pointer h-full">
+              <div className="w-12 h-12 rounded-lg gradient-3d flex items-center justify-center mb-4">
+                <Box className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">3D Animation</h3>
+              <p className="text-foreground-muted">
+                Cinematic 3D visuals for fashion, interior, and exterior design.
+              </p>
             </div>
-            <h3 className="text-2xl font-bold mb-2">3D Animation</h3>
-            <p className="text-foreground-muted">
-              Cinematic 3D visuals for fashion, interior, and exterior design.
-            </p>
-          </div>
-        </motion.div>
+          </Link>
+        </div>
       </section>
 
-      {/* Temporary Note */}
+      {/* Trust Quote */}
       <section className="container-custom py-20 text-center">
-        <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-          <h3 className="text-xl font-semibold mb-4">🚀 Stage 1 Complete</h3>
-          <p className="text-foreground-muted">
-            Project foundation successfully scaffolded. Next.js with App Router, Tailwind CSS v4,
-            Framer Motion, and Lucide React are all configured and ready.
-          </p>
-          <p className="text-foreground-muted mt-4">
-            <strong>Next:</strong> Building individual components (LiveUISwitcher, VibeCheckForm, VideoHero)
-          </p>
+        <div className="max-w-2xl mx-auto p-12 rounded-3xl border border-border bg-background-subtle/50">
+          <blockquote className="text-2xl italic text-foreground">
+            "We believe that premium design is not just a luxury, but a core requirement for high-performance brands in the AI era."
+          </blockquote>
+          <p className="mt-6 font-bold text-accent-primary">— Studio Team</p>
         </div>
       </section>
     </div>

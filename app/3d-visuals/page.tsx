@@ -10,7 +10,7 @@ export const metadata = {
 
 // Mock video data - replace with actual Cloudinary IDs and assets
 const heroVideoConfig: VideoConfig = {
-    src: "/videos/3d-hero.mp4", // Fallback local video
+    src: "https://assets.mixkit.co/videos/preview/mixkit-abstract-flowing-purple-and-blue-gradient-background-23746-large.mp4",
     poster: "/images/3d-hero-poster.jpg",
     // cloudinaryId: "your-cloudinary-id", // Uncomment when using Cloudinary
 };
