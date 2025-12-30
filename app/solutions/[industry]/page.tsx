@@ -58,20 +58,23 @@ export default function IndustrySolutionsPage({ params }: IndustrySolutionsPageP
     document.documentElement.style.setProperty("--industry-secondary", config.theme.secondary);
     document.documentElement.style.setProperty("--industry-accent", config.theme.accent);
 
+    // Store company in cookie for personalized return greetings
+    if (companyName) {
+      document.cookie = `company=${encodeURIComponent(companyName)}; path=/; max-age=${60 * 60 * 24 * 30}`; // 30 days
+    }
+
+    // Agent handshake notification
+    if (companyName && ref) {
+      notifyAgentHandshake(companyName, params.industry, ref);
+    }
+
     // Cleanup on unmount
     return () => {
       document.documentElement.style.removeProperty("--industry-primary");
       document.documentElement.style.removeProperty("--industry-secondary");
       document.documentElement.style.removeProperty("--industry-accent");
     };
-  }, [config.theme]);
-
-  // Agent handshake notification
-  useEffect(() => {
-    if (companyName && ref) {
-      notifyAgentHandshake(companyName, params.industry, ref);
-    }
-  }, [companyName, params.industry, ref]);
+  }, [config.theme, companyName, params.industry, ref]);
 
   // Mock video config - in production, map to actual videos
   const heroVideoConfig: VideoConfig = {
